@@ -6,17 +6,18 @@ from kivy.uix.label import Label
 from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
 from kivy.core.window import Window
-
-import os
+import os, sys
 from PIL import Image as PILImage
 
 class ImageToPDFApp(App):
     def build(self):
+        platform = sys.platform
+        
         self.title = 'Image to PDF Converter'
         # Window.size = (360, 640)  # Dimensioni tipiche di uno schermo di cellulare
         layout = BoxLayout(orientation='vertical')
         
-        self.filechooser = FileChooserIconView(filters=['*.png', '*.jpg', '*.jpeg'], multiselect=True)
+        self.filechooser = FileChooserIconView(filters=['*.png', '*.jpg', '*.jpeg'], multiselect=True, path='/storage/emulated/0/' if platform == 'android' else '/')
         layout.add_widget(self.filechooser)
         
         self.filename_input = TextInput(hint_text='Enter PDF file name', size_hint=(1, 0.1), halign='center', multiline=False)
