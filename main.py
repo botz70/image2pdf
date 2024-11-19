@@ -11,7 +11,6 @@ from PIL import Image as PILImage
 
 class ImageToPDFApp(App):
     def build(self):
-        
         self.title = 'Image to PDF Converter'
         # Window.size = (360, 640)  # Dimensioni tipiche di uno schermo di cellulare
         layout = BoxLayout(orientation='vertical')
