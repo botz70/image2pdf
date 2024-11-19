@@ -43,7 +43,7 @@ class ImageToPDFApp(App):
             return
         
         images = [PILImage.open(file) for file in selected_files]
-        pdf_path = os.path.join(os.path.expanduser('~'), f'{filename}.pdf')
+        pdf_path = os.path.join('/storage/emulated/0/', f'{filename}.pdf')
         images[0].save(pdf_path, save_all=True, append_images=images[1:])
         
         # popup = Popup(title='Success', content=Label(text=f'PDF saved to {pdf_path}'), size_hint=(0.5, 0.5))
