@@ -11,7 +11,7 @@ from PIL import Image as PILImage
 
 from android.permissions import request_permissions, Permission
 
-request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE, Permission.MANAGE_EXTERNAL_STORAGE])
+request_permissions([Permission.MANAGE_EXTERNAL_STORAGE])
 
 
 class ImageToPDFApp(App):
