@@ -9,6 +9,11 @@ from kivy.core.window import Window
 import os
 from PIL import Image as PILImage
 
+from android.permissions import request_permissions, Permission
+
+request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE, Permission.MANAGE_EXTERNAL_STORAGE])
+
+
 class ImageToPDFApp(App):
     def build(self):
         self.title = 'Image to PDF Converter'
